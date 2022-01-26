@@ -4,6 +4,10 @@
 #              places a specific amount and selects a drink. If the amount is
 #              over the needed amount the sum is refunded.
 # DONE: Prompt user by asking "What would you like? (espresso/latte/cappuccino):”
+
+from menu_coffee import resources
+from res import MENU
+
 QUARTERS = 0.25
 DIMES = 0.10
 NICKELS = 0.05
@@ -11,11 +15,33 @@ PENNIES = 0.01
 
 
 def enough_money(q, d, n, p):
+    """This function returns the total amount of money based on the coins that were inputed."""
     total = 0
     total += ((q * QUARTERS) + (d * DIMES) + (n * NICKELS) + (p * PENNIES))
     return total
 
 
+def resources(drinks, sums):
+    if drinks == 'espresso':
+        if MENU['espresso']['cost'] < sums:
+            pass
+        else:
+            pass
+    elif drinks == 'latte':
+        if MENU['latte']['cost'] < sums:
+            pass
+        else:
+            pass
+    elif drinks == 'cappuccino':
+        if MENU['cappuccino']['cost'] < sums:
+            pass
+        else:
+            pass
+    else:
+        pass
+
+
+print(MENU['espresso']['cost'])
 drink = input("What would you like? (espresso/latte/cappuccino):").lower()
 print("Please insert coins.")
 quarter_amount = input("How many quarters?: ")
@@ -23,6 +49,7 @@ dimes_amount = input("How many dimes?: ")
 nickle_amount = input("How many nickles?: ")
 pennie_amount = input("How many pennies?: ")
 money_sum = enough_money(quarter_amount, dimes_amount, nickle_amount, pennie_amount)
+resources(drink, money_sum)
 
 # TODO: Check the user’s input to decide what to do next.
 # TODO: Check if The prompt should show every time action has completed, e.g.
