@@ -21,7 +21,7 @@ def enough_money(q, d, n, p):
     return total
 
 
-def resources(drinks, sums):
+def resources_pass(drinks, sums):
     if drinks == 'espresso':
         if MENU['espresso']['cost'] < sums:
             pass
@@ -41,15 +41,61 @@ def resources(drinks, sums):
         pass
 
 
-print(MENU['espresso']['cost'])
+def enough_ingredient(drinks):
+    if drinks == 'espresso':
+        if MENU['cappuccino']['ingredients']['water'] < resources['water']:
+            if MENU['cappuccino']['ingredients']['coffee'] < resources['coffee']:
+                resources['water'] -= MENU['cappuccino']['ingredients']['water']
+                resources['coffee'] -= MENU['cappuccino']['ingredients']['coffee']
+                return 'possible'
+            else:
+                return 'coffee'
+        else:
+            return 'water'
+    elif drinks == 'latte':
+        if MENU['latte']['ingredients']['water'] < resources['water']:
+            if MENU['latte']['ingredients']['milk'] < resources['milk']:
+                if MENU['latte']['ingredients']['coffee'] < resources['coffee']:
+                    resources['water'] -= MENU['latte']['ingredients']['water']
+                    resources['coffee'] -= MENU['latte']['ingredients']['coffee']
+                    resources['milk'] -= MENU['latte']['ingredients']['milk']
+                    return 'possible'
+                else:
+                    return 'coffee'
+            else:
+                return 'milk'
+        else:
+            return 'water'
+    elif drinks == 'cappuccino':
+        if MENU['cappuccino']['ingredients']['water'] < resources['water']:
+            if MENU['cappuccino']['ingredients']['milk'] < resources['milk']:
+                if MENU['cappuccino']['ingredients']['coffee'] < resources['coffee']:
+                    resources['water'] -= MENU['cappuccino']['ingredients']['water']
+                    resources['coffee'] -= MENU['cappuccino']['ingredients']['coffee']
+                    resources['milk'] -= MENU['cappuccino']['ingredients']['milk']
+                    return 'possible'
+                else:
+                    return 'coffee'
+            else:
+                return 'milk'
+        else:
+            return 'water'
+
+
+# print(MENU['espresso']['cost'])
 drink = input("What would you like? (espresso/latte/cappuccino):").lower()
-print("Please insert coins.")
-quarter_amount = input("How many quarters?: ")
-dimes_amount = input("How many dimes?: ")
-nickle_amount = input("How many nickles?: ")
-pennie_amount = input("How many pennies?: ")
-money_sum = enough_money(quarter_amount, dimes_amount, nickle_amount, pennie_amount)
-resources(drink, money_sum)
+is_possible = enough_ingredient(drink)
+if is_possible == 'possible':
+    print("Please insert coins.")
+    quarter_amount = int(input("How many quarters?: "))
+    dimes_amount = int(input("How many dimes?: "))
+    nickle_amount = int(input("How many nickles?: "))
+    pennie_amount = int(input("How many pennies?: "))
+    money_sum = enough_money(quarter_amount, dimes_amount, nickle_amount, pennie_amount)
+    resources_pass(drink, money_sum)
+else:
+    print(f"Sorry there is not {is_possible}")
+
 
 # TODO: Check the user’s input to decide what to do next.
 # TODO: Check if The prompt should show every time action has completed, e.g.
