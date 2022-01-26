@@ -4,14 +4,25 @@
 #              places a specific amount and selects a drink. If the amount is
 #              over the needed amount the sum is refunded.
 # DONE: Prompt user by asking "What would you like? (espresso/latte/cappuccino):”
+QUARTERS = 0.25
+DIMES = 0.10
+NICKELS = 0.05
+PENNIES = 0.01
+
+
+def enough_money(q, d, n, p):
+    total = 0
+    total += ((q * QUARTERS) + (d * DIMES) + (n * NICKELS) + (p * PENNIES))
+    return total
+
+
 drink = input("What would you like? (espresso/latte/cappuccino):").lower()
 print("Please insert coins.")
-quarters = input("How many quarters?: ")
-dimes = input("How many dimes?: ")
-nickles = input("How many nickles?: ")
-pennies = input("How many pennies?: ")
-
-
+quarter_amount = input("How many quarters?: ")
+dimes_amount = input("How many dimes?: ")
+nickle_amount = input("How many nickles?: ")
+pennie_amount = input("How many pennies?: ")
+money_sum = enough_money(quarter_amount, dimes_amount, nickle_amount, pennie_amount)
 
 # TODO: Check the user’s input to decide what to do next.
 # TODO: Check if The prompt should show every time action has completed, e.g.
