@@ -2,7 +2,7 @@
 # Date: January 26th, 2022
 # Description: This program simulates a coffee machine where the user
 #              places a specific amount and selects a drink. If the amount is
-#              is over the needed amount the sum is refunded.
+#              over the needed amount the sum is refunded.
 
 # TODO: Prompt user by asking "What would you like? (espresso/latte/cappuccino):”
 # TODO: Check the user’s input to decide what to do next.
