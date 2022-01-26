@@ -3,8 +3,16 @@
 # Description: This program simulates a coffee machine where the user
 #              places a specific amount and selects a drink. If the amount is
 #              over the needed amount the sum is refunded.
+# DONE: Prompt user by asking "What would you like? (espresso/latte/cappuccino):”
+drink = input("What would you like? (espresso/latte/cappuccino):").lower()
+print("Please insert coins.")
+quarters = input("How many quarters?: ")
+dimes = input("How many dimes?: ")
+nickles = input("How many nickles?: ")
+pennies = input("How many pennies?: ")
 
-# TODO: Prompt user by asking "What would you like? (espresso/latte/cappuccino):”
+
+
 # TODO: Check the user’s input to decide what to do next.
 # TODO: Check if The prompt should show every time action has completed, e.g.
 # once the drink is dispensed. The prompt should show again to serve the next customer.
