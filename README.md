@@ -32,12 +32,19 @@
 <h3 align="center">Coffee Machine Simulator</h3>
 
   <p align="center">
-    Blackjack is a game that is played using cards. The gaol of the game is to add up the cars to the largest number without going over twenty-one. If the cards in the hand add up more than twenty-one then its called a bust. Meaning the game is lost imidiatly. It doesent matter how much the user goes over twenty one then the user looses. The way the cards are counted are that all the cards from 2 - 10 are counted as their face value. The Jack, Queen, and King cards count as ten. The Ace card can count as 1 to the total or can count as 11. Depending if the user went over 21 or under the user can decide the value of the Ace.
+    In the Coffee Machine Simulator, the user can select a drink by typing
+the desired drink: espresso, latte, or cappuccino. The program will check if there are 
+enough ingredients and then let the user know. In the case there are enough ingredients 
+then the program will ask the user to enter the number of quarters, dimes, nickles, and pennies 
+they have. Afterward, the program will let them know if they entered a valid amount based
+on the price of the coffee. The user can get the 'report' where it will display
+the number of ingredients left and the Money that the machine-made.
+If the user wants to exit the simulation then they would type 'off'.
     <br />
-    <a href="https://github.com/sanduler/blackjack-game-py"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/sanduler/coffee-machine-py"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/sanduler/blackjack-game-py">View Demo</a>
+    <a href="https://github.com/sanduler/coffee-machine-py">View Demo</a>
   </p>
 </div>
 
@@ -47,7 +54,7 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <p>The goal of the game is to add up the cars to the largest number without going over twenty-one. If the cards in the hand add up more than twenty-one then its called a bust. Meaning the game is lost imidiatly. It doesent matter how much the user goes over twenty one then the user looses. The way the cards are counted are that all the cards from 2 - 10 are counted as their face value. The Jack, Queen, and King cards count as ten. The Ace card can count as 1 to the total or can count as 11. Depending if the user went over 21 or under the user can decide the value of the Ace.</p>
+      <p>The goal of the project is to provide a real life simulation of a vending machine process. <p>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -102,7 +109,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/sanduler/blackjack-game-py
+   git clone https://github.com/sanduler/coffee-machine-py
    ```
 2. Install NPM packages
    ```sh
@@ -117,8 +124,8 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="center"><a>Pictures of the game in actions are shown:</a></p>
 <a href="https://github.com/sanduler/blackjack-game-py">
-    <img src="img/game1.png" alt="Pictures">
-    <img src="img/game2.png" alt="Pictures">
+    <img src="img/sim1.png" alt="Pictures">
+    <img src="img/sim2.png" alt="Pictures">
   </a>
 
 _For more examples, please refer to the [Documentation](https://example.com)_
@@ -139,7 +146,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Ruben Sanduleac - ruvim.sanduleac@gmail.com
 
-Project Link: [https://github.com/sanduler/blackjack-game-py](https://github.com/sanduler/blackjack-game-py)
+Project Link: [https://github.com/sanduler/coffee-machine-py](https://github.com/sanduler/coffee-machine-py)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -158,4 +165,4 @@ Project Link: [https://github.com/sanduler/blackjack-game-py](https://github.com
 [license-url]: https://github.com/sanduler/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: diagram/game0.png
+[product-screenshot]: diagram/sim3.png
