@@ -124,8 +124,8 @@ This is an example of how to list things you need to use the software and how to
 
 <p align="center"><a>Pictures of the game in actions are shown:</a></p>
 <a href="https://github.com/sanduler/coffee-machine-py">
-    <img src="img/sim1.png" alt="Pictures">
     <img src="img/sim2.png" alt="Pictures">
+    <img src="img/sim3.png" alt="Pictures">
   </a>
 
 _For more examples, please refer to the [Documentation](https://example.com)_
@@ -165,4 +165,4 @@ Project Link: [https://github.com/sanduler/coffee-machine-py](https://github.com
 [license-url]: https://github.com/sanduler/repo_name/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: img/sim3.png
+[product-screenshot]: img/sim1.png
