@@ -12,6 +12,7 @@ QUARTERS = 0.25
 DIMES = 0.10
 NICKELS = 0.05
 PENNIES = 0.01
+MONEY = 0
 
 
 def enough_money(q, d, n, p):
@@ -23,22 +24,25 @@ def enough_money(q, d, n, p):
 
 def resources_pass(drinks, sums):
     if drinks == 'espresso':
-        if MENU['espresso']['cost'] < sums:
-            pass
+        if MENU['espresso']['cost'] <= sums:
+            coin_change = sums - (MENU['espresso']['cost'])
+            return coin_change
         else:
-            pass
+            return -1
     elif drinks == 'latte':
-        if MENU['latte']['cost'] < sums:
-            pass
+        if MENU['latte']['cost'] <= sums:
+            coin_change = sums - (MENU['latte']['cost'])
+            return coin_change
         else:
-            pass
+            return -1
     elif drinks == 'cappuccino':
-        if MENU['cappuccino']['cost'] < sums:
-            pass
+        if MENU['cappuccino']['cost'] <= sums:
+            coin_change = sums - (MENU['cappuccino']['cost'])
+            return coin_change
         else:
-            pass
+            return -1
     else:
-        pass
+        return -2
 
 
 def enough_ingredient(drinks):
@@ -81,6 +85,12 @@ def enough_ingredient(drinks):
         else:
             return 'water'
 
+    elif drinks == 'report':
+        print(f"Water: {resources['water']}")
+        print(f"Coffee: {resources['coffee']}")
+        print(f"Milk: {resources['milk']}")
+        print(f"Money: ${MONEY}")
+
 
 # print(MENU['espresso']['cost'])
 drink = input("What would you like? (espresso/latte/cappuccino):").lower()
@@ -92,9 +102,16 @@ if is_possible == 'possible':
     nickle_amount = int(input("How many nickles?: "))
     pennie_amount = int(input("How many pennies?: "))
     money_sum = enough_money(quarter_amount, dimes_amount, nickle_amount, pennie_amount)
-    resources_pass(drink, money_sum)
-else:
-    print(f"Sorry there is not {is_possible}")
+    ready = resources_pass(drink, money_sum)
+    if ready > 0:
+        MONEY += MENU[drink]['cost']
+
+    elif ready >= -1:
+        print("Not enough money. Money refunded. Please try again.")
+    else:
+        print("Invalid selection. Money refunded. Please try again.")
+# else:
+#     print(f"Sorry there is not enough {is_possible}")
 
 
 # TODO: Check the user’s input to decide what to do next.
