@@ -8,54 +8,88 @@
 from menu_coffee import resources
 from res import MENU
 
+# Global Variable for coin values
 QUARTERS = 0.25
 DIMES = 0.10
 NICKELS = 0.05
 PENNIES = 0.01
+# Global Variable for keeping track of the profit by the machine
 MONEY = 0.00
+# Bool to continue running the machine until the user types 'off'
 OFF = False
 
 
 def enough_money(q, d, n, p):
     """This function returns the total amount of money based on the coins that were inputed."""
+    # Counter that keeps track of the total amount the user entered
     total = 0
+    # calculations for the total
     total += ((q * QUARTERS) + (d * DIMES) + (n * NICKELS) + (p * PENNIES))
+    # return the total back to the main
     return total
 
 
 def resources_pass(drinks, sums):
+    """This function receives two inputs 'drinks' responsible for checking if the possible
+    drink is in the menu. In addition, the function returns the change back. The sums input is also
+    responsible for taking in the amount and calculating the difference between the two"""
+    # compare the input from the user for the drinks with the menu
     if drinks == 'espresso':
+        # if the cost in the menu is less than or equal to the amount the user entered.
         if MENU['espresso']['cost'] <= sums:
+            # calculate the change
             coin_change = sums - (MENU['espresso']['cost'])
+            # return the change back to the main.
             return coin_change
         else:
+            # else return a flag int for not enough money
             return -1
+    # compare the input from the user for the drinks with the menu
     elif drinks == 'latte':
+        # if the cost in the menu is less than or equal to the amount the user entered.
         if MENU['latte']['cost'] <= sums:
+            # calculate the change
             coin_change = sums - (MENU['latte']['cost'])
+            # return the change back to the main.
             return coin_change
         else:
+            # else return a flag int for not enough money
             return -1
+    # compare the input from the user for the drinks with the menu
     elif drinks == 'cappuccino':
+        # if the cost in the menu is less than or equal to the amount the user entered.
         if MENU['cappuccino']['cost'] <= sums:
+            # calculate the change
             coin_change = sums - (MENU['cappuccino']['cost'])
+            # return the change back to the main.
             return coin_change
         else:
+            # else return a flag int for not enough money
             return -1
     else:
+        # return a second flag that the possible input was not valid
         return -2
 
 
 def enough_ingredient(drinks):
+    """This function gets passed 'drinks' and it is used to check
+    if there are enough ingredients left in the resources file. The drinks is compared then
+    the amount is deducted from the resources in the res.py file which are stored in a dictionary"""
+    # If the valid drink matches the one in the dictionary
     if drinks == 'espresso':
+        # check if there is enough water, and coffee in the resources file less than or equal to
         if MENU['espresso']['ingredients']['water'] <= resources['water']:
             if MENU['espresso']['ingredients']['coffee'] <= resources['coffee']:
+                # subtract the amount needed from the resources from the amount required in MENU
                 resources['water'] -= MENU['espresso']['ingredients']['water']
                 resources['coffee'] -= MENU['espresso']['ingredients']['coffee']
+                # return back to main that it is possible to create the drink
                 return 'possible'
             else:
+                # return the missing resource and let the user know
                 return 'coffee'
         else:
+            # return the missing resource and let the user know
             return 'water'
     elif drinks == 'latte':
         if MENU['latte']['ingredients']['water'] <= resources['water']:
