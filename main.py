@@ -13,7 +13,7 @@ money_machine = MoneyMachine()
 coffee_maker = CoffeeMaker()
 menu = Menu()
 is_on = True
-
+# while loop for the program
 while is_on:
     print(logo)
     options = menu.get_items()
