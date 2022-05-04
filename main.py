@@ -15,6 +15,7 @@ menu = Menu()
 is_on = True
 # while loop for the program
 while is_on:
+    # print logo
     print(logo)
     options = menu.get_items()
     choice = input(f"What would you like? ({options}): ")
